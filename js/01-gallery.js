@@ -9,10 +9,10 @@ galleryRef.insertAdjacentHTML(
 );
 galleryRef.addEventListener("click", onGalleryClick);
 
-function onGalleryClick(e) {
-  e.preventDefault();
+function onGalleryClick(event) {
+  event.preventDefault();
 
-  const gallaryItem = e.target.closest(".gallery__item");
+  const gallaryItem = event.target.closest(".gallery__item");
   if (!gallaryItem) return;
 
   const img = gallaryItem.querySelector(".gallery__image");
@@ -47,8 +47,8 @@ function showModal(src) {
 
   window.addEventListener("keydown", onKeyDown);
 
-  function onKeyDown(e) {
-    if (e.key !== "Escape") return;
+  function onKeyDown(event) {
+    if (event.key !== "Escape") return;
 
     instance.close();
     window.removeEventListener("keydown", onKeyDown);
